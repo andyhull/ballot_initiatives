@@ -2,7 +2,7 @@ class InitiativesController < ApplicationController
   # GET /initiatives
   # GET /initiatives.json
   def index
-    @initiatives = Initiative.all
+    @initiatives = Initiative.all(:order => "year DESC, name")
 
     respond_to do |format|
       format.html # index.html.erb
