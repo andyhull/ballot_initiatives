@@ -1,7 +1,6 @@
   <div class="row-fluid">
     <h3>Listing initiatives</h3>
     <div class="span12">
-      <% @initiatives.each do |initiative| %>
       <div class="span10 offset1">
         <table class="table table-condensed table-hover">
           <thead class="unstyled inline">
@@ -15,6 +14,7 @@
               <th>Expenditures</th>
             </tr>
           </thead>
+        <% @initiatives.each do |initiative| %>
           <tbody class="unstyled inline">
             <tr>
               <td><%= link_to initiative.name, initiative, :class=>'btn btn-link' %></td>
@@ -27,11 +27,9 @@
               <td><%= link_to 'Edit', edit_initiative_path(initiative), :class=>'btn' %></td>
               <td><%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %></td>
             </tr>
+          <% end %>
           </tbody>
         </table>
-        <ul class="unstyled inline span8"
-        </ul>
-    <% end %>
       </div>
     </div>
   <span class="btn btn-primary"><%= link_to 'New Initiative', new_initiative_path %></span>
