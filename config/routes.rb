@@ -1,4 +1,7 @@
 BallotInitiatives::Application.routes.draw do
+  resources :issues
+
+
   resources :firms
 
 

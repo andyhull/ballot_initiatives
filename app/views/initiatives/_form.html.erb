@@ -48,6 +48,14 @@
       </div>
     </div>
   </div>
+  <div class="field">
+    <div class="control-group">
+      <%= f.label :issue_ids, "Select an issue area for this initiative", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :issue_ids, Issue.all, :id, :name %>
+      </div>
+    </div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
