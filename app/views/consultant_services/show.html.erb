@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Total promised:</b>
+  <%= @consultant_service.total_promised %>
+</p>
+
+<p>
+  <b>Total received:</b>
+  <%= @consultant_service.total_received %>
+</p>
+
+
+<%= link_to 'Edit', edit_consultant_service_path(@consultant_service) %> |
+<%= link_to 'Back', consultant_services_path %>

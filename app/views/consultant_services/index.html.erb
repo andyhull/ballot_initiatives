@@ -1,0 +1,25 @@
+<h1>Listing consultant_services</h1>
+
+<table>
+  <tr>
+    <th>Total promised</th>
+    <th>Total received</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consultant_services.each do |consultant_service| %>
+  <tr>
+    <td><%= consultant_service.total_promised %></td>
+    <td><%= consultant_service.total_received %></td>
+    <td><%= link_to 'Show', consultant_service %></td>
+    <td><%= link_to 'Edit', edit_consultant_service_path(consultant_service) %></td>
+    <td><%= link_to 'Destroy', consultant_service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consultant service', new_consultant_service_path %>

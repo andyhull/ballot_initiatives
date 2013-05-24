@@ -1,0 +1,25 @@
+<%= form_for(@consultant_service) do |f| %>
+  <% if @consultant_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consultant_service.errors.count, "error") %> prohibited this consultant_service from being saved:</h2>
+
+      <ul>
+      <% @consultant_service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :total_promised %><br />
+    <%= f.number_field :total_promised %>
+  </div>
+  <div class="field">
+    <%= f.label :total_received %><br />
+    <%= f.number_field :total_received %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

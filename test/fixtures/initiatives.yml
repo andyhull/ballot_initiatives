@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  type: 
+  status: MyString
+  year: MyString
+  contributions: 1
+  expenditures: 1
+
+two:
+  name: MyString
+  description: MyText
+  type: 
+  status: MyString
+  year: MyString
+  contributions: 1
+  expenditures: 1

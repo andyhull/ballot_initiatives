@@ -1,4 +1,13 @@
 BallotInitiatives::Application.routes.draw do
+  resources :firms
+
+
+  resources :consultant_services
+
+
+  resources :initiatives
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

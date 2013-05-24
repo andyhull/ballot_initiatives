@@ -1,0 +1,54 @@
+<%= form_for(@initiative) do |f| %>
+  <% if @initiative.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@initiative.errors.count, "error") %> prohibited this initiative from being saved:</h2>
+
+      <ul>
+      <% @initiative.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :contributions %><br />
+    <%= f.number_field :contributions %>
+  </div>
+  <div class="field">
+    <%= f.label :expenditures %><br />
+    <%= f.number_field :expenditures %>
+  </div>
+  
+  <div class="field">
+    <div class="control-group">
+      <%= f.label :firm_ids, "Select a consulting firm for this initiative", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :firm_ids, Firm.all, :id, :name %>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
