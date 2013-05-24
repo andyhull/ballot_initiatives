@@ -1,5 +1,7 @@
 $blue:#3D6AA2;
-
+body {
+	font-family: 'Roboto Condensed', sans-serif;
+}
 
 .navbar-inner {
 	background: $blue;
@@ -8,6 +10,7 @@ $blue:#3D6AA2;
 		color: #d0d0d0;
 		font-weight: 500;
 		font-size: 32px;
+
 	}
 }
 
@@ -36,5 +39,12 @@ $blue:#3D6AA2;
 	background: lighten($blue, 40);
 	&:hover {
 		background: lighten($blue, 70);
+	}
+}
+
+table {
+	tbody {
+		font-family: 'Vollkorn', 'Mate', serif;
+		font-size: 110%;
 	}
 }
