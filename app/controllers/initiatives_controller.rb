@@ -25,6 +25,7 @@ class InitiativesController < ApplicationController
   # GET /initiatives/new.json
   def new
     @initiative = Initiative.new
+    @initiative.consultant_services.build
 
     respond_to do |format|
       format.html # new.html.erb

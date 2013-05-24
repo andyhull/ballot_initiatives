@@ -10,4 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require main
+ *= require bootstrap.min
+ *= require bootstrap-responsive.min
  */

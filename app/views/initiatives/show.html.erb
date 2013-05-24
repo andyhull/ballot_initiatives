@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <b>Type:</b>
-  <%= @initiative.type %>
+  <b>initiativeType:</b>
+  <%= @initiative.initiativetype %>
 </p>
 
 <p>
@@ -27,12 +27,12 @@
 
 <p>
   <b>Contributions:</b>
-  <%= @initiative.contributions %>
+  <%= number_to_currency @initiative.contributions %>
 </p>
 
 <p>
   <b>Expenditures:</b>
-  <%= @initiative.expenditures %>
+  <%= number_to_currency @initiative.expenditures %>
 </p>
 
 

@@ -1,35 +1,38 @@
-<h1>Listing initiatives</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Status</th>
-    <th>Year</th>
-    <th>Contributions</th>
-    <th>Expenditures</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @initiatives.each do |initiative| %>
-  <tr>
-    <td><%= initiative.name %></td>
-    <td><%= initiative.description %></td>
-    <td><%= initiative.type %></td>
-    <td><%= initiative.status %></td>
-    <td><%= initiative.year %></td>
-    <td><%= initiative.contributions %></td>
-    <td><%= initiative.expenditures %></td>
-    <td><%= link_to 'Show', initiative %></td>
-    <td><%= link_to 'Edit', edit_initiative_path(initiative) %></td>
-    <td><%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Initiative', new_initiative_path %>
+  <div class="row-fluid">
+    <h3>Listing initiatives</h3>
+    <div class="span12">
+      <% @initiatives.each do |initiative| %>
+      <div class="span10 offset1">
+        <table class="table table-condensed table-hover">
+          <thead class="unstyled inline">
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Year</th>
+              <th>Contributions</th>
+              <th>Expenditures</th>
+            </tr>
+          </thead>
+          <tbody class="unstyled inline">
+            <tr>
+              <td><%= link_to initiative.name, initiative.name, :class=>'btn btn-link' %></td>
+              <td><%= initiative.description %></td>
+              <td><%= initiative.initiativetype %></td>
+              <td><%= initiative.status %></td>
+              <td><%= initiative.year %></td>
+              <td><%= number_to_currency initiative.contributions %></td>
+              <td><%= number_to_currency initiative.expenditures %></td>
+              <td><%= link_to 'Edit', edit_initiative_path(initiative), :class=>'btn' %></td>
+              <td><%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %></td>
+            </tr>
+          </tbody>
+        </table>
+        <ul class="unstyled inline span8"
+        </ul>
+    <% end %>
+      </div>
+    </div>
+  <span class="btn btn-primary"><%= link_to 'New Initiative', new_initiative_path %></span>
+  </div>
