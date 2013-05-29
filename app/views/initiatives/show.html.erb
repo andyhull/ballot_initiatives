@@ -1,40 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <div class="span6">
+    <h2><%= @initiative.name %></h2>
+    <h4><%= @initiative.description %></h4>
 
-<p>
-  <b>Name:</b>
-  <%= @initiative.name %>
-</p>
+<h5><%= @initiative.issues.name %></h5>
+    <dl class="dl-horizontal">
+      <dt>Year:</dt>
+      <dd><%= @initiative.year %></dd>
+    </dl>
 
-<p>
-  <b>Description:</b>
-  <%= @initiative.description %>
-</p>
+        <dl class="dl-horizontal">
+      <dt>Status:</dt>
+      <dd><%= @initiative.status %></dd>
+    </dl>
+    
+    <dl class="dl-horizontal">
+      <dt>InitiativeType:</dt>
+      <dd><%= @initiative.initiativetype %></dd>
+    </dl>
 
-<p>
-  <b>initiativeType:</b>
-  <%= @initiative.initiativetype %>
-</p>
+    <dl class="dl-horizontal">
+      <dt>Contributions:</dt>
+      <dd><%= number_to_currency @initiative.contributions %></dd>
+    </dl>
 
-<p>
-  <b>Status:</b>
-  <%= @initiative.status %>
-</p>
-
-<p>
-  <b>Year:</b>
-  <%= @initiative.year %>
-</p>
-
-<p>
-  <b>Contributions:</b>
-  <%= number_to_currency @initiative.contributions %>
-</p>
-
-<p>
-  <b>Expenditures:</b>
-  <%= number_to_currency @initiative.expenditures %>
-</p>
+    <dl class="dl-horizontal">
+      <dt>Expenditures:</dt>
+      <dd><%= number_to_currency @initiative.expenditures %></dd>
+    </dl>
 
 
-<%= link_to 'Edit', edit_initiative_path(@initiative) %> |
-<%= link_to 'Back', initiatives_path %>
+    <%= link_to 'Edit', edit_initiative_path(@initiative) %> |
+    <%= link_to 'Back', initiatives_path %>
+</div>
+</div>

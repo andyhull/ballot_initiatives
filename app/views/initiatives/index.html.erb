@@ -25,7 +25,7 @@
               <td><%= number_to_currency initiative.contributions %></td>
               <td><%= number_to_currency initiative.expenditures %></td>
               <td><%= link_to 'Edit', edit_initiative_path(initiative), :class=>'btn' %></td>
-              <td><%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %></td>
+              <td><%= link_to 'Delete', initiative, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-danger' %></td>
             </tr>
           <% end %>
           </tbody>
